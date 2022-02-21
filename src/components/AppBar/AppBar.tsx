@@ -1,9 +1,11 @@
 import { AppBar, Grid, Typography } from "@mui/material";
 import React, { FunctionComponent } from "react";
+import {useNavigate }from "react-router-dom"
 
 interface Props {}
 
 const Appbar: FunctionComponent<Props> = (props: Props) => {
+  const history = useNavigate()
   return (
     <div style={{padding: "20px"}}>
       
@@ -18,25 +20,33 @@ const Appbar: FunctionComponent<Props> = (props: Props) => {
           </Grid>
           <Grid item xs={12} lg={7}>
             <Grid container justifyContent={"flex-end"} spacing={4} >
-              <Grid item>
-                <Typography color={"#0E0E0E"} variant="h6">
+              <Grid item > 
+                <div onClick={() => history("/works")}>
+                <Typography color={"#0E0E0E"} variant="h6"  >
                   Works
-                </Typography>{" "}
+                </Typography>
+                </div>
               </Grid>
               <Grid item >
-                <Typography color={"#0E0E0E"} variant="h6">
+               <div onClick={()=> history("/resume")} >
+               <Typography color={"#0E0E0E"} variant="h6">
                   Resume
                 </Typography>
+               </div>
               </Grid>
               <Grid item>
+                <div onClick={()=> history("/personal")} >
                 <Typography color={"#0E0E0E"} variant="h6">
                   Personal
-                </Typography>{" "}
+                </Typography>
+                </div>
               </Grid>
               <Grid item >
+                <div onClick={()=> history("/contact")} >
                 <Typography color={"#0E0E0E"} variant="h6">
                   Contact
-                </Typography>{" "}
+                </Typography>
+                </div>
               </Grid>
             </Grid>
           </Grid>
