@@ -14,6 +14,7 @@ import WorksComponent from './components/Works/WorksComponent';
 import ResumeComponent from './components/Resume/ResumeComponent';
 import ContactComponent from './components/Contact/ContactComponent';
 import PersonalComponent from './components/Personal/PersonalComponent';
+import LandingPage from './components/LandingPage/LandingPage';
 
 const useStyles = makeStyles({
   background:{
@@ -39,7 +40,7 @@ const App = () => {
       <Router>
       <Appbar />
         <Routes>
-          <Route path="/" element={null}  />
+          <Route path="/" element={<LandingPage />}  />
           <Route path="/works" element={<WorksComponent />} />
           <Route path="/resume" element={<ResumeComponent />} />
           <Route path="/contact" element={<ContactComponent />} />
